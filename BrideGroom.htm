@@ -1,0 +1,116 @@
+<script type="text/javascript">
+<!--
+
+var guestName;
+var gifttype;
+var familyside;
+var groomCount = 0;
+var brideCount = 0;
+var groomAccum = "";
+var brideAccum = "";
+var errorFlag = 0;
+var giftCount = 0;
+var toasterCount = 0;
+var toasterAccum = "";
+var silverwareCount = 0;
+var silverwareAccum = "";
+var stemwareCount = 0;
+var stemwareAccum = "";
+var anotherGuest = "yes";
+
+//loop
+while (anotherGuest == "yes")
+{
+   familyside = prompt("Bride/Groom", "")
+	 guestName = prompt("Name of guest?", "")
+	 gifttype = prompt("What was your gift?", "");
+   if (familyside == "groom")
+	 {
+       groomCount = groomCount + 1;
+       if(groomCount == 1)
+			 {
+ 
+       groomAccum = "<p>groomside: <br>" + groomCount + ".  " + guestName + ". " + gifttype;
+       }
+       else
+       {
+      groomAccum = groomAccum + "<br>  " + groomCount +   ".  " + guestName + ".  " + gifttype;
+ 
+       }
+}
+       else
+       {
+        brideCount = brideCount + 1;
+			 }
+        if(brideCount == 1)
+            {   
+            brideAccum = "<p>brideside: <br>" + brideCount + ". " + guestName + ". " + gifttype;
+            }
+            else
+            {
+            brideAccum = brideAccum + "<br> " + brideCount + ".  "  + guestName + ".  "  + gifttype;
+            }
+						
+
+switch (gifttype) 
+{
+case "toaster":
+
+toasterCount = toasterCount + 1;
+if(toasterCount == 1)
+	{
+	  toasterAccum = "<p>Multiple toasters by: <br>" + guestName;
+	}
+	else
+	{
+	  toasterAccum = toasterAccum + "<br>" + guestName;
+	}
+break;
+
+ case "silverware":
+silverwareCount = silverwareCount + 1;
+if (silverwareCount == 1)
+	{
+	  silverwareAccum = "<p>Multiple silverware by: <br>" + guestName;
+	}
+	else
+	{
+	  silverwareAccum = silverwareAccum + "<br>" + guestName;
+	}
+break;
+
+case "stemware":
+ stemwareCount = stemwareCount + 1;
+ if (stemwareCount == 1)
+	{
+	  stemwareAccum = "<p>Multiple stemware by: <br>" + guestName;
+	}
+	else
+	{
+	  stemwareAccum = stemwareAccum + "<br>" + guestName;
+	}
+
+break;
+
+
+default:
+alert("you gave us something other than silverware/stemware/toaster " + gifttype + " Thank you!")
+errorFlag = 1;
+break;
+
+}//end switch
+anotherGuest = prompt("Do you have another customer? yes/no",  "yes")
+}
+
+document.write(groomAccum);
+document.write(brideAccum);
+document.write(toasterAccum);
+document.write(silverwareAccum);
+document.write(stemwareAccum);
+
+
+
+
+
+// -->
+</script>
